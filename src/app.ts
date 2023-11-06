@@ -1,17 +1,7 @@
-const pizza = {
-    name: 'Pepperoni',
-    toppings: ['pepperoni']
-};
+let pizzaSize: string = 'small';
 
-function order({name: pizzaName, toppings: pizzaToppings}: any) {
-    return {pizzaName, pizzaToppings}
+function selectSize(size: 'small' | 'medium' | 'large'): void {
+  pizzaSize = size;
 }
-
-const {pizzaName } = order(pizza);
-const toppings = ['pepperoni', 'bacon', 'chilli'];
-const [first, second, third] = toppings
-function logToppings([first, second, third] :any) {
-    console.log(first, second, third)
-}
-
-logToppings(toppings)
+selectSize('medium');
+console.log(`Pizza size: ${pizzaSize}`); // Pizza size: medium

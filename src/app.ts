@@ -1,7 +1,10 @@
-let pizzaSize: string = 'small';
+type Size = 'small' | 'medium' | 'large';
+type Callback = (size: Size) => void;
 
-function selectSize(size: 'small' | 'medium' | 'large'): void {
-  pizzaSize = size;
+let pizzaSize: Size = 'small';
+const selectSize: Callback = (size) => {
+    pizzaSize = size;
 }
 selectSize('medium');
-console.log(`Pizza size: ${pizzaSize}`); // Pizza size: medium
+
+
